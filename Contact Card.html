@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Contact Cards</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script type="text/javascript">
+            var count = 0
+            $( document ).ready(function() {
+                $('form').submit(function(){
+                    return false;
+                });
+                $('input[type=submit]').click(function(){
+                    $('#card_list').append('<div class="card"><h1 class=' + count + '>' + $("#first_name").val() + ' ' + $("#last_name").val() + '</h1>' + '<p class="text' + count + '" style="display:none">' + $("#desc").val() + '</p>' + '<h2 class=' + count + '>Click Here to Show More!</h2><button class="text' + count + '" style="display:none" counter="' + count + '">Hide Description</button>')
+                    count++
+                });
+                $(document).on('click', 'h2', function(){
+                    $(".text" + $(this).attr("class")).show()
+                    $("." + $(this).attr("class")).hide()
+                });
+                $(document).on('click', 'button', function(){
+                    $(".text" + $(this).attr("counter")).hide()
+                    $("." + $(this).attr("counter")).show()
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="container">
+            <h1>Contact Cards</h1>
+            <ul>
+                <li>First Name: </li>
+                <li>Last Name: </li>
+                <li>Description:</li>
+            </ul>
+            <form id="name">
+                <input type="text" id="first_name" placeholder="First Name">
+                <input type="text" id="last_name" placeholder="Last Name">
+                <textarea  id="desc" placeholder="Description" rows="8" cols="40"></textarea>
+                <input type="submit" id="submit" value="Add User">
+            </form>
+            <div id="card_list">
+
+            </div>
+        </div>
+    </body>
+</html>

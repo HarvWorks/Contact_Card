@@ -1,0 +1,56 @@
+/*CSS reset settings here*/
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    font-family: Arial,Helvetica,sans-serif;
+}
+#container{
+    margin: 0 auto;
+    width: 1000px;
+    text-align: left;
+}
+ul{
+    width: 100px;
+    display: inline-block;
+    vertical-align: top;
+}
+li{
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+}
+#name{
+    width: 350px;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 8px;
+}
+label{
+    display: block;
+}
+
+input, textarea{
+    font-size: 1em;
+    display: block;
+    margin-bottom: 4px;
+}
+
+input[type="text"]{
+    width: 200px;
+    height: 20px;
+}
+#card_list{
+    width: 500px;
+    height: auto;
+    display: inline-block;
+    margin-top: -50px;
+}
+.card{
+    width: 400px;
+    height: 200px;
+    border: 1px solid black;
+    margin: 25px;
+    padding: 25px;
+}
